@@ -412,6 +412,8 @@ endif
 
 PRODUCT_PACKAGES += android.hardware.lights-service.qti
 
+PRODUCT_PACKAGES += com.android.vndk.current.on_vendor
+
 ###################################################################################
 # This is the End of target.mk file.
 # Now, Pickup other split product.mk files:
