@@ -312,7 +312,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.ims</name>
         <transport>hwbinder</transport>
-        <version>1.6</version>
+        <version>1.7</version>
         <interface>
             <name>IImsRadio</name>
             <instance>imsradio0</instance>
@@ -767,17 +767,10 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <hal format="hidl">
         <name>vendor.qti.hardware.trustedui</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ITrustedUI</name>
-            <instance>default</instance>
-            <instance>qtee-vm</instance>
-        </interface>
-        <interface>
-            <name>ITrustedInput</name>
-            <instance>default</instance>
-            <instance>qtee-vm</instance>
-        </interface>
+        <fqname>@1.2::ITrustedUI/default</fqname>
+        <fqname>@1.2::ITrustedUI/qtee-vm</fqname>
+        <fqname>@1.1::ITrustedInput/default</fqname>
+        <fqname>@1.1::ITrustedInput/qtee-vm</fqname>
     </hal>
     <!-- System Helper HAL Service -->
     <hal format="hidl">
@@ -802,6 +795,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <name>IBluetoothSar</name>
             <instance>default</instance>
         </interface>
+    </hal>
+    <!-- AGM service-->
+    <hal format="hidl">
+         <name>vendor.qti.hardware.AGMIPC</name>
+         <transport>hwbinder</transport>
+         <version>1.0</version>
+         <interface>
+             <name>IAGM</name>
+             <instance>default</instance>
+          </interface>
     </hal>
     <!-- SPU service-->
     <hal format="hidl">
