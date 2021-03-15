@@ -1,6 +1,8 @@
 BUILD_BROKEN_DUP_RULES := true
 TEMPORARY_DISABLE_PATH_RESTRICTIONS := true
 
+RELAX_USES_LIBRARY_CHECK := true
+
 # Default Android A/B configuration
 ENABLE_AB ?= true
 
