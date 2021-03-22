@@ -1,6 +1,8 @@
 BUILD_BROKEN_DUP_RULES := true
 TEMPORARY_DISABLE_PATH_RESTRICTIONS := true
 
+RELAX_USES_LIBRARY_CHECK := true
+
 # Default Android A/B configuration
 ENABLE_AB ?= true
 
@@ -171,19 +173,20 @@ endif
 # audio specific
 #----------------------------------------------------------------------
 TARGET_USES_AOSP := false
-#ifeq ($(TARGET_USES_QMAA_OVERRIDE_AUDIO), false)
-#ifeq ($(TARGET_USES_QMAA),true)
+TARGET_USES_AOSP_FOR_AUDIO := false
+ifeq ($(TARGET_USES_QMAA_OVERRIDE_AUDIO), false)
+ifeq ($(TARGET_USES_QMAA),true)
 AUDIO_USE_STUB_HAL := true
 TARGET_USES_AOSP_FOR_AUDIO := true
-include $(TOPDIR)vendor/qcom/opensource/audio-hal/primary-hal/configs/common/default.mk
-#else
+-include $(TOPDIR)vendor/qcom/opensource/audio-hal/primary-hal/configs/common/default.mk
+else
 # Audio hal configuration file
-#-include $(TOPDIR)vendor/qcom/opensource/audio-hal/primary-hal/configs/lahaina/lahaina.mk
-#endif
-#else
+-include $(TOPDIR)vendor/qcom/opensource/audio-hal/primary-hal/configs/lahaina/lahaina.mk
+endif
+else
 # Audio hal configuration file
-#-include $(TOPDIR)vendor/qcom/opensource/audio-hal/primary-hal/configs/lahaina/lahaina.mk
-#endif
+-include $(TOPDIR)vendor/qcom/opensource/audio-hal/primary-hal/configs/lahaina/lahaina.mk
+endif
 
 TARGET_USES_QCOM_BSP := false
 
