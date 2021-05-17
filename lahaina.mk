@@ -417,6 +417,8 @@ PRODUCT_PACKAGES += android.hardware.lights-service.qti
 
 PRODUCT_PACKAGES += com.android.vndk.current.on_vendor
 
+PRODUCT_ENABLE_QESDK := true
+
 ###################################################################################
 # This is the End of target.mk file.
 # Now, Pickup other split product.mk files:
