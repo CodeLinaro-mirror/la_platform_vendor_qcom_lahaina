@@ -88,6 +88,6 @@ ifeq ($(strip $(BOARD_HAS_QCOM_WLAN)),true)
 include device/qcom/wlan/lahaina/AndroidBoardWlan.mk
 endif
 # override default make with prebuilt make path (if any)
-ifneq (, $(wildcard $(shell pwd)/prebuilts/build-tools/linux-x86/bin/make))
-   MAKE := $(shell pwd)/prebuilts/build-tools/linux-x86/bin/$(MAKE)
+ifneq (, $(wildcard $(abspath .)/prebuilts/build-tools/linux-x86/bin/make))
+   MAKE := $(abspath .)/prebuilts/build-tools/linux-x86/bin/$(MAKE)
 endif
