@@ -35,6 +35,12 @@ PRODUCT_BUILD_USERDATA_IMAGE := true
 #enable NO_TELEPHONY
 TARGET_NO_TELEPHONY := true
 
+#enable LOW_RAM
+TARGET_HAS_LOW_RAM := true
+PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true
+
+ALLOW_MISSING_DEPENDENCIES=true
+
 # Also, since we're going to skip building the system image, we also skip
 # building the OTA package. We'll build this at a later step.
 TARGET_SKIP_OTA_PACKAGE := true
