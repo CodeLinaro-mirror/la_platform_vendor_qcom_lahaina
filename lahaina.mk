@@ -32,6 +32,9 @@ endif
 PRODUCT_BUILD_RAMDISK_IMAGE := true
 PRODUCT_BUILD_USERDATA_IMAGE := true
 
+#enable NO_TELEPHONY
+TARGET_NO_TELEPHONY := true
+
 # Also, since we're going to skip building the system image, we also skip
 # building the OTA package. We'll build this at a later step.
 TARGET_SKIP_OTA_PACKAGE := true
