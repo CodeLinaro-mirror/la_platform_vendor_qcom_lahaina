@@ -413,10 +413,6 @@ else
 endif
 TARGET_MOUNT_POINTS_SYMLINKS := false
 
-# Fingerprint feature
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
-
 # system prop for enabling QFS (QTI Fingerprint Solution)
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.qfp=true
