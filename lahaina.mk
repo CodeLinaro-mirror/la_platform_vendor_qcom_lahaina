@@ -139,7 +139,7 @@ $(call inherit-product, build/make/target/product/go_defaults_common.mk)
 
 TARGET_DEFINES_DALVIK_HEAP := true
 $(call inherit-product, device/qcom/vendor-common/common64.mk)
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 # beluga settings
 PRODUCT_PROPERTY_OVERRIDES += \
