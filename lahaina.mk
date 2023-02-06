@@ -302,6 +302,8 @@ PRODUCT_PACKAGES += libqrtr
 # diag-router
 TARGET_HAS_DIAG_ROUTER := true
 
+# enable QSensorTest for test
+PRODUCT_PACKAGES_DEBUG += QSensorTest
 
 # f2fs utilities
 PRODUCT_PACKAGES += \
