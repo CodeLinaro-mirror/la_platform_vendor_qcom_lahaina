@@ -35,6 +35,12 @@ PRODUCT_BUILD_USERDATA_IMAGE := true
 #enable NO_TELEPHONY
 TARGET_NO_TELEPHONY := true
 
+#enable LOW_RAM
+TARGET_HAS_LOW_RAM := true
+PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true
+
+ALLOW_MISSING_DEPENDENCIES=true
+
 # Also, since we're going to skip building the system image, we also skip
 # building the OTA package. We'll build this at a later step.
 TARGET_SKIP_OTA_PACKAGE := true
@@ -128,9 +134,12 @@ BOARD_HAVE_QCOM_FM := false
 # privapp-permissions whitelisting (To Fix CTS :privappPermissionsMustBeEnforced)
 PRODUCT_PROPERTY_OVERRIDES += ro.control_privapp_permissions=enforce
 
+# Inherit common Android Go defaults.
+$(call inherit-product, build/make/target/product/go_defaults_common.mk)
+
 TARGET_DEFINES_DALVIK_HEAP := true
 $(call inherit-product, device/qcom/vendor-common/common64.mk)
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 # beluga settings
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -315,7 +324,10 @@ PRODUCT_PACKAGES += camera.device@3.2-impl
 PRODUCT_PACKAGES += camera.device@1.0-impl
 PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-impl
 # Enable binderized camera HAL
-PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-service_64
+PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-service-lazy
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.camera.enableLazyHal=true
+
 
 DEVICE_FRAMEWORK_MANIFEST_FILE := device/qcom/lahaina/framework_manifest.xml
 
@@ -400,10 +412,6 @@ else
     RAMDISK_SNAPSHOT_VERSION := current
 endif
 TARGET_MOUNT_POINTS_SYMLINKS := false
-
-# Fingerprint feature
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
 
 # system prop for enabling QFS (QTI Fingerprint Solution)
 PRODUCT_PROPERTY_OVERRIDES += \
