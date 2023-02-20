@@ -319,16 +319,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_vendor=ext4 \
     POSTINSTALL_OPTIONAL_vendor=true
 
-# Camera configuration file. Shared by passthrough/binderized camera HAL
-PRODUCT_PACKAGES += camera.device@3.2-impl
-PRODUCT_PACKAGES += camera.device@1.0-impl
-PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-impl
-# Enable binderized camera HAL
-PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-service-lazy
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.camera.enableLazyHal=true
-
-
 DEVICE_FRAMEWORK_MANIFEST_FILE := device/qcom/lahaina/framework_manifest.xml
 
 # QCV allows multiple chipsets to be supported on a single vendor.
