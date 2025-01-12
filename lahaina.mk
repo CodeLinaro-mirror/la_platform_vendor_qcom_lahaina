@@ -445,6 +445,9 @@ endif
 
 PRODUCT_PACKAGES += android.hardware.lights-service.qti
 
+# Flag to enable Hibernation restore from ABL
+TARGET_HIBERNATION_INSECURE_ENABLE := true
+
 ###################################################################################
 # This is the End of target.mk file.
 # Now, Pickup other split product.mk files:
