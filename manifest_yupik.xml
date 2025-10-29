@@ -43,8 +43,14 @@ SPDX-License-Identifier: BSD-3-Clause-Clear
         <version>1</version>
         <fqname>INxpNfc/default</fqname>
     </hal>
+    <!-- secure element -->
+    <hal format="aidl">
+        <name>android.hardware.secure_element</name>
+        <version>1</version>
+        <fqname>ISecureElement/eSE1</fqname>
+    </hal>
     <!-----gatekeeper--->
-   <!-- <hal format="aidl">
+  <!--  <hal format="aidl">
         <name>android.hardware.gatekeeper</name>
         <version>1</version>
         <interface>
