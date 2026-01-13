@@ -408,6 +408,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #target specific runtime prop for qspm
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qspm.enable=true
+# system prop for disabling radio ril
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.radio.noril=true \
+    ro.vendor.radio.noril=true
 #ANT+ stack
 PRODUCT_PACKAGES += \
     libvolumelistener
