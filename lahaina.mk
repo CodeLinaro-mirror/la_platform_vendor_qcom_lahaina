@@ -407,7 +407,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.qfp=true
 #target specific runtime prop for qspm
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.qspm.enable=true
+    ro.vendor.qspm.enable=true \
+    ro.vendor.qti.va_aosp.support=1
 #ANT+ stack
 PRODUCT_PACKAGES += \
     libvolumelistener
