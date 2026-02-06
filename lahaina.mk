@@ -42,8 +42,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Set GRF/Vendor freeze properties
 BOARD_SHIPPING_API_LEVEL := 202504
 
-#Align ELF segment of binaries to 16k
-PRODUCT_MAX_PAGE_SIZE_SUPPORTED := 16384
+#Align ELF segment of binaries to 4k
+PRODUCT_MAX_PAGE_SIZE_SUPPORTED := 4096
 
 #Enable AOSP to be page size agnostic
 PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
