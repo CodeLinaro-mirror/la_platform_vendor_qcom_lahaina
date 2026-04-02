@@ -73,6 +73,7 @@ on early-fs
     start vold
 
 on fs
+    start hwservicemanager
     mkdir /mnt/vendor/spunvm 0660 system system
     mount_all --early
     chown root system /mnt/vendor/persist
@@ -86,6 +87,7 @@ on post-fs
     write /dev/ipa 1
 
 on late-fs
+    wait_for_prop hwservicemanager.ready true
     #exec_start wait_for_keymaster
     start console
     mount_all --late
