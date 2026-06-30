@@ -71,14 +71,14 @@ SPDX-License-Identifier: BSD-3-Clause-Clear
         <fqname>INxpNfc/default</fqname>
     </hal>
     <!-----gatekeeper--->
-   <!-- <hal format="aidl">
+    <hal format="aidl">
         <name>android.hardware.gatekeeper</name>
         <version>1</version>
         <interface>
             <name>IGatekeeper</name>
             <instance>default</instance>
         </interface>
-    </hal> -->
+    </hal>
     <!-- SPU service-->
     <hal format="aidl" optional="true">
         <name>vendor.qti.hardware.spu</name>
