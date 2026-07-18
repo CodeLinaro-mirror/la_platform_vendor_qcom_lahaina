@@ -27,6 +27,7 @@ SECIMAGE_BASE := $(QCPATH)/sectools
 SECTOOLS_SECURITY_PROFILE := $(SECIMAGE_BASE)/config/integration/secimage_eccv3.xml
 SIGN_ID := abl
 INSTALL_FILE_NAME := abl.elf
+PRIVATE_SOC_VERS := "0x600f 0x6018"
 
 define sec-image-generate
         echo "Generating signed appsbl using secimage v1 tool"
@@ -38,6 +39,7 @@ define sec-image-generate
                 -i $(TARGET_EMMC_BOOTLOADER) \
                 -t $(PRODUCT_OUT)/signed \
                 -g $(SIGN_ID) \
+		--soc_vers=$(PRIVATE_SOC_VERS) \
                 --config=$(SECTOOLS_SECURITY_PROFILE) \
                 --install_file_name=$(INSTALL_FILE_NAME) \
                 --install_base_dir=$(PRODUCT_OUT) \
